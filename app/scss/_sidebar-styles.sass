@@ -1,0 +1,105 @@
+.sidebar::-webkit-scrollbar
+  width: 0px
+  background: transparent
+
+.sidebar
+  position: fixed
+  z-index: 1
+  max-height: 100vh
+  top: 0
+  bottom: 0
+  display: flex
+  flex-direction: column
+  width: $sidebar-width
+  overflow-y: auto
+  box-shadow: 20px 0px 20px 3px rgba(60, 60, 60, 0.5)
+
+  &__logo
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    padding: 35px 85px
+    text-decoration: none
+    background-color: white
+
+    &_title
+      font-family: 'Maven Pro', sans-serif
+      color: #364048
+      font-size: 48px
+      text-decoration: none
+
+  &__menu
+
+    ul
+      display: flex
+      flex-direction: column
+      list-style-type: none
+
+      li
+        background-color: #31393d
+        border-bottom: 1px solid #293034
+
+        a
+          display: block
+          text-decoration: none
+          font-family: 'Roboto', sans-serif
+          text-transform: uppercase
+          font-size: 18px
+          color: white
+          padding: 20px
+          text-align: right
+
+  &__filter
+    font-family: 'Roboto', sans-serif
+    font-weight: 100
+    padding: 20px
+    background-color: #242b2e
+    border-bottom: 1px solid #1e282b
+
+    &_title
+      color: #1ab5b3
+      font-size: 19px
+      text-align: right
+      margin-bottom: 10px
+
+      span
+        margin-right: 10px
+
+    &_list
+
+      ul
+        display: flex
+        flex-direction: column
+        list-style-type: none
+
+        li
+          text-align: right
+          padding: 5px 0
+          a
+            color: #616769
+            text-decoration: none
+            font-size: 13px
+
+  &__footer
+    font-family: 'Roboto', sans-serif
+    font-weight: 100
+    padding: 20px
+    background-color: #242b2e
+    border-bottom: 1px solid #1e282b
+    min-height: 360px
+
+    &_shared
+      ul
+        display: flex
+        flex-wrap: wrap
+        list-style-type: none
+        justify-content: flex-end
+
+        li
+          margin-left: 10px
+    &_copyright
+      margin-top: 15px
+      text-align: right
+      color: #616769
+      font-size: 12px

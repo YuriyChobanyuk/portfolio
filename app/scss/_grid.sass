@@ -44,3 +44,6 @@ $points: ["mobile", "phablet", "tablet", "laptop", "desktop"]
         @each $column in $columns
           &-#{$column}
             max-width: percentage(number(str-slice($column, 1, 1))/number(str-slice($column, 3, 3)))
+
+.m-b-10
+  margin-bottom: 10px

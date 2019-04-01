@@ -1,0 +1,40 @@
+.sidebar
+  
+  .sidebar__logo
+    a.sidebar__logo_title(href="#")
+      | kappe
+    a.sidebar__logo_img(href="#")
+      img(src="img/creatives.png" alt="creatives")
+    
+  .sidebar__menu
+    ul
+      -
+        var itemslist = ["Home", "Work", "About", "Blog", "Services", "Contact"];
+      each item in itemslist
+        li
+          a(href="#") #{item}
+      
+    
+  .sidebar__filter
+    
+    .sidebar__filter_title
+      span Filter
+      i.fas.fa-th-large
+      
+    .sidebar__filter_list
+      ul
+        -
+          var filterlist = ["All Works", "web design", "ilustration", "photography", "wallpapers", "broshures"];
+        each item in filterlist
+          li
+            a(href="#") #{item}
+    
+  .sidebar__footer
+    .sidebar__footer_shared
+      ul
+        each item in "1234567"
+          li
+            a(href="#")
+              img(src="img/webicon-"+ item +".png")
+    .sidebar__footer_copyright
+      | © 2014 Kappe, All Rights Reserved

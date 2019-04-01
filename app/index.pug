@@ -2,22 +2,34 @@ doctype html
 html(lang="en")
   include partials/head
   body
+    include partials/sidebar
     
-    .main-page
-      
-      .sidebar
-        .logo
-        .menu
-        .filter
-        .shared
-        .copyrights
-      
-      .content
-        .portfolio
-          .portfolio-list
-
-          .portfolio-item
-            
-            .portfolio-item__inner
-        
+    .preview
+      each item in '123456789'
+        .preview__item
+          .preview__info
+            .preview__info_title
+              |Cool App Design
+            .preview__info_tags
+              |Development,
+              | mobile
+            .preview__info_link
+              a(href="#")
+                i.fas.fa-arrow-right
+          img(src="img/preview-1.png" alt="preview img")
+          
+    .show-contact
+      .show-contact__icon
+        i.fas.fa-info-circle
+          
+    .contacts
+      a(href="tel:993012345679").m-b-10
+        i.fas.fa-phone
+        |9930 1234 5679
+      a(href="#").m-b-10
+        i.fas.fa-envelope
+        |contact@domain.com
+      a(href="#")
+        i.fas.fa-home
+        |street address example
     include partials/footer
