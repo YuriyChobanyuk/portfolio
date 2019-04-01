@@ -1,12 +1,12 @@
 .sidebar
   
-  .sidebar__logo
-    a.sidebar__logo_title(href="#")
+  .logo
+    a.logo__title(href="#")
       | kappe
-    a.sidebar__logo_img(href="#")
+    a.logo__img(href="#")
       img(src="img/creatives.png" alt="creatives")
     
-  .sidebar__menu
+  .menu
     ul
       -
         var itemslist = ["Home", "Work", "About", "Blog", "Services", "Contact"];
@@ -15,13 +15,13 @@
           a(href="#") #{item}
       
     
-  .sidebar__filter
+  .filter
     
-    .sidebar__filter_title
+    .filter__title
       span Filter
       i.fas.fa-th-large
       
-    .sidebar__filter_list
+    .filter__list
       ul
         -
           var filterlist = ["All Works", "web design", "ilustration", "photography", "wallpapers", "broshures"];
@@ -29,12 +29,12 @@
           li
             a(href="#") #{item}
     
-  .sidebar__footer
-    .sidebar__footer_shared
+  .footer
+    .footer__shared
       ul
         each item in "1234567"
           li
             a(href="#")
               img(src="img/webicon-"+ item +".png")
-    .sidebar__footer_copyright
+    .footer__copyright
       | © 2014 Kappe, All Rights Reserved
