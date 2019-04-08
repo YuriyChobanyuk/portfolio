@@ -1,16 +1,46 @@
 $(document).ready(function(){
-  var width = $(window).width();
+
+  var filterLinks = $('.filter__list a');
+
+  //listening url field and makes it sensetive on hash changes
+  function setSelectedHashes(){
+    [].forEach.call(filterLinks, function(item, index){
+      var $temp = filterLinks[index].getAttribute("href").substring(1);
+
+      if(window.location.hash.substring(1) == $temp && $temp != "allworks"){
+        $('[data-anchor]').addClass('is-hidden');
+        $('[data-anchor=' + $temp + "]").removeClass('is-hidden');
+        $('.filter__list a').removeClass('active-filter');
+        item.classList.add('active-filter');
+      };
+
+    });
+  };
+
+  setSelectedHashes();
+
+  $(window).on('hashchange', function(){
+    setSelectedHashes();
+  });
+
+  //makes filter items clickabel and shows tagged items
   var $previewItems = document.querySelectorAll(".preview__item");
-  [].forEach.call($previewItems, function(item){
-    item.style.height = item.offsetWidth * 0.75 + "px";
+  var $filteItems = $('.filter__list a').on("click", function(){
+    $('[data-anchor]').addClass('is-hidden');
+    var hash = $(this).attr('href');
+    window.location.hash = hash;
+    $('[data-anchor=' + hash.substring(1) + "]").removeClass('is-hidden');
+    $('.filter__list a').removeClass('active-filter');
+    $(this).addClass('active-filter');
   });
-  $(window).on('resize', function(){
-     if($(this).width() != width){
-        width = $(this).width();
-        let itemWidth = Math.ceil(document.querySelector(".preview__item").offsetWidth * 0.75);
-        [].forEach.call($previewItems, function(item){
-          item.style.height = itemWidth + "px";
-        });
-     };
+
+  $('[href="#allworks"]').on('click', function(){
+    $('[data-anchor]').removeClass('is-hidden');
   });
+
+  //sets the preview items ratio to 4:3
+  // !! bug detected: doesnt makes changes while escaping full windowed mode
+  // !! probably offsetWidth problems (resize reacts on width changes)
+  // deleted: too much bugs
+
 });

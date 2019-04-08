@@ -1,40 +1,40 @@
 .sidebar
-  
-  .logo
-    a.logo__title(href="#")
-      | kappe
-    a.logo__img(href="#")
-      img(src="img/creatives.png" alt="creatives")
-    
-  .menu
-    ul
-      -
-        var itemslist = ["Home", "Work", "About", "Blog", "Services", "Contact"];
-      each item in itemslist
-        li
-          a(href="#") #{item}
+  #my-scrollbar
+    .logo
+      a.logo__title(href="#")
+        | kappe
+      a.logo__img(href="#")
+        img(src="img/creatives.png" alt="creatives")
       
-    
-  .filter
-    
-    .filter__title
-      span Filter
-      i.fas.fa-th-large
-      
-    .filter__list
+    .menu
       ul
         -
-          var filterlist = ["All Works", "web design", "ilustration", "photography", "wallpapers", "broshures"];
-        each item in filterlist
+          var itemslist = ["Home", "Work", "About", "Blog", "Services", "Contact"];
+        each item in itemslist
           li
             a(href="#") #{item}
-    
-  .footer
-    .footer__shared
-      ul
-        each item in "1234567"
-          li
-            a(href="#")
-              img(src="img/webicon-"+ item +".png")
-    .footer__copyright
-      | © 2014 Kappe, All Rights Reserved
+        
+      
+    .filter
+      
+      .filter__title
+        span Filter
+        i.fas.fa-th-large
+        
+      .filter__list
+        ul
+          -
+            var filterlist = ["All Works", "web design", "ilustration", "photography", "wallpapers", "broshures"];
+          each item in filterlist
+            li
+              a(href="#" + item.replace(" ", "").toLowerCase()) #{item}
+      
+    .footer
+      .footer__shared
+        ul
+          each item in "1234567"
+            li
+              a(href="#")
+                img(src="img/webicon-"+ item +".png")
+      .footer__copyright
+        | © 2014 Kappe, All Rights Reserved

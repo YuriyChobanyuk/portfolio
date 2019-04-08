@@ -1,14 +1,8 @@
 .preview
-  position: relative
-  z-index: 0
-  margin-left: $sidebar-width
-  width: calc(100% - $sidebar-width)
   display: flex
   flex-wrap: wrap
-  overflow: hidden
 
-
-  &__item
+  &__wrapper
     +breakpoint("desktop")
       max-width: 25%
     +breakpoint("laptop")
@@ -16,14 +10,32 @@
     +breakpoint("tablet")
       max-width: 50%
     +breakpoint("phablet")
-      max-width: 100%
+      max-width: 50%
+    +breakpoint("mobile")
+      max-width: 50%
+    flex: 1 1 100%
+    overflow: hidden
+    transform: scale(1)
+    transition: .3s all ease
+
+  &__container
+    width: 100%
+    padding-top: 75%
     position: relative
+
+
+  &__item
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+
 
     img
       width: 100%
       height: 100%
       object-fit: cover
-      max-width: 300px
 
   &__info
     position: absolute
@@ -46,6 +58,8 @@
 
     &_title
       font-size: 24px
+      +breakpoint("mobile")
+        font-size: 12px
 
     &_tags
       font-size: 12px
@@ -59,6 +73,9 @@
       display: flex
       min-width: 90px
       min-height: 90px
+      +breakpoint("mobile")
+        min-width: 60px
+        min-height: 60px
 
       a
         width: 100%
@@ -70,3 +87,9 @@
         justify-content: center
         color: white
         text-decoration: none
+
+.is-hidden
+  transform: scale(0) !important
+  width: 0 !important
+  flex: 0 !important
+  transition: none !important

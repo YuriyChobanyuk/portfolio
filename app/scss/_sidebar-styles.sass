@@ -1,6 +1,3 @@
-.sidebar::-webkit-scrollbar
-  width: 0px
-  background: transparent
 
 .sidebar
   position: fixed
@@ -10,9 +7,13 @@
   bottom: 0
   display: flex
   flex-direction: column
-  width: $sidebar-width
+  width: 200px
+  +breakpoint("tablet")
+    width: 300px
   overflow-y: auto
   box-shadow: 20px 0px 20px 3px rgba(60, 60, 60, 0.5)
+  transition: .3s ease all
+
 
   .logo
     display: flex
@@ -22,6 +23,7 @@
     padding: 35px 85px
     text-decoration: none
     background-color: white
+
 
     &__title
       font-family: 'Maven Pro', sans-serif
@@ -103,3 +105,21 @@
       text-align: right
       color: #616769
       font-size: 12px
+
+@media (max-width: 768px)
+  .sidebar
+    left: -200px
+
+  .container
+    margin-left: 0
+    width: 100%
+
+.show-sidebar
+  left: 0 !important
+
+.show-container
+  margin-left: 200px
+  width: calc(100% - 200px)
+
+.active-filter
+  color: #1ab5b3 !important

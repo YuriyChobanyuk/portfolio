@@ -1,0 +1,21 @@
+
+.preview
+  -
+    var filterlist = ["webdesign", "ilustration", "photography", "wallpapers", "broshures"];
+    
+  each item in '12345678910'
+    -
+      var randIndex = Math.floor( Math.random() * filterlist.length);
+    .preview__wrapper(data-anchor=filterlist[randIndex])
+      .preview__container
+        .preview__item
+          .preview__info
+            .preview__info_title
+              |Cool App Design
+            .preview__info_tags
+              |Development,
+              | mobile
+            .preview__info_link
+              a(href="#")
+                i.fas.fa-arrow-right
+          img(src="img/preview-1.png" alt="preview img")
