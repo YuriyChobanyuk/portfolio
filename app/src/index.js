@@ -15,8 +15,6 @@ Scrollbar.init(document.querySelector('#my-scrollbar'));
 var containerScroll = Scrollbar.init(document.querySelector('.container'));
 
 containerScroll.addListener(function(){
-  console.log(containerScroll.getSize().content.height);
-  console.log(containerScroll.scrollTop);
     if((containerScroll.getSize().content.height / 2) < containerScroll.scrollTop + 200){
       document.querySelector('.to-top-button').classList.add('to-top-visible');
     } else {

@@ -26,50 +26,6 @@ body
     margin-left: 300px
     width: calc(100% - 300px)
 
-.to-top-button
-  position: fixed
-  z-index: 10
-  width: 50px
-  height: 50px
-  top: 80vh
-  right: -50px
-  align-items: center
-  justify-content: center
-  transition: .4s ease all
-
-
-  i
-    font-size: 50px
-    color: black
-    cursor: pointer
-    border-radius: 50%
-
-    &:hover
-      box-shadow: 0px 0px 3px 3px black
-
-.to-top-visible
-  right: 50px
-
-.menu-button
-  position: fixed
-  top: 0
-  left: -90px
-  width: 90px
-  height: 90px
-  background: #28b4b2
-  flex-direction: column
-  justify-content: center
-  padding: 15px
-  cursor: pointer
-  z-index: 5
-  display: flex
-
-  span
-    height: 10px
-    background-color: white
-    width: 100%
-    margin: auto
-    border-radius: 3px
 
 @media (max-width: 768px)
   .menu-button
@@ -78,6 +34,7 @@ body
 #my-scrollbar
   height: 100%
 
+@import 'buttons'
 
 @import 'sidebar-styles'
 
