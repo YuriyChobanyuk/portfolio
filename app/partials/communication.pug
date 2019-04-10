@@ -1,0 +1,36 @@
+.communication.m-r-20
+  .communication__header
+    .communication__header_top
+      .communication__header_title
+        |Get in touch with us
+      .communication__header_button
+        span.first-span
+        span.second-span
+    .communication__header_text
+      |Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, 
+      |nec sagittis sem nibh id elit. Duis sed odio sit amet nibh 
+      |vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. 
+      |Nam nec tellus a odio tincidunt auctor a ornare odio.
+  
+  form(action="#").communication__form
+    .communication__form_title
+      |Send us a message
+    .communication__form_autorisation.p-r-10
+      .input__row.m-b-10
+        .input__row_icon
+          .icon-container
+            i.fas.fa-user
+        input(name="name" type="text" placeholder="Name")
+      .input__row.m-b-10
+        .input__row_icon
+          .icon-container
+            i.far.fa-envelope
+        input(name="email" type="email" placeholder="e-mail")
+      .input__row
+        .input__row_icon
+          .icon-container
+            i.fas.fa-link
+        input(name="website" type="url" placeholder="website")
+    .communication__form_comment
+      textarea(name="comment" placeholder="Message" rows="3").m-b-10
+      input(type="submit" value="SEND NOW!")
