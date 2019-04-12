@@ -1,0 +1,31 @@
+html(lang="en")
+  include partials/head
+  body
+    include partials/sidebar
+    include partials/menu-button
+    .container
+      .row
+        .column-desktop-1-2
+          .row
+            include partials/introdution
+            
+            .staff
+              .staff__title
+                |Our Staff
+              .staff__profiles
+                .row
+                  each item in '123456'
+                    .column-desktop-1-3.column-tablet-1-2.column-mobile-1-2.column-phablet-1-2
+                      a(href="#").m-t-20
+                        img(src="./img/person-1.png" alt="staff photo")
+                        .staff__info
+                          .staff__info_name
+                            |Jhon Doe
+                          .staff__info_position
+                            |Developer
+                  
+        .column-desktop-1-2
+    .to-top-button
+      i.fas.fa-arrow-circle-up
+    include partials/contacts
+    include partials/footer

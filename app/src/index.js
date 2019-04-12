@@ -67,3 +67,15 @@ $('.communication__header_button').on('click', function(){
   $('.communication').toggleClass("communication-is-shown");
   $('.second-span').toggleClass('invisible-span');
 });
+
+function initMap() {
+
+  var myPoint = {lat: 48.929580, lng: 24.708661};
+
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 15, center: myPoint});
+
+  var marker = new google.maps.Marker({position: myPoint, map: map});
+}
+
+initMap();

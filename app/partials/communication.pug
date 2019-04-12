@@ -20,17 +20,17 @@
         .input__row_icon
           .icon-container
             i.fas.fa-user
-        input(name="name" type="text" placeholder="Name")
+        input(name="name" type="text" placeholder="Name" required minlength="6")
       .input__row.m-b-10
         .input__row_icon
           .icon-container
             i.far.fa-envelope
-        input(name="email" type="email" placeholder="e-mail")
+        input(name="email" type="email" placeholder="e-mail" required )
       .input__row
         .input__row_icon
           .icon-container
             i.fas.fa-link
-        input(name="website" type="url" placeholder="website")
+        input(name="website" type="url" placeholder="website" required)
     .communication__form_comment
-      textarea(name="comment" placeholder="Message" rows="3").m-b-10
+      textarea(name="comment" placeholder="Message" rows="3" required).m-b-10
       input(type="submit" value="SEND NOW!")

@@ -38,9 +38,6 @@ $(document).ready(function(){
     $('[data-anchor]').removeClass('is-hidden');
   });
 
-  //sets the preview items ratio to 4:3
-  // !! bug detected: doesnt makes changes while escaping full windowed mode
-  // !! probably offsetWidth problems (resize reacts on width changes)
-  // deleted: too much bugs
+  
 
 });
