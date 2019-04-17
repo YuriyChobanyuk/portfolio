@@ -12,25 +12,4 @@
       |vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. 
       |Nam nec tellus a odio tincidunt auctor a ornare odio.
   
-  form(action="#").communication__form
-    .communication__form_title
-      |Send us a message
-    .communication__form_autorisation.p-r-10
-      .input__row.m-b-10
-        .input__row_icon
-          .icon-container
-            i.fas.fa-user
-        input(name="name" type="text" placeholder="Name" required minlength="6")
-      .input__row.m-b-10
-        .input__row_icon
-          .icon-container
-            i.far.fa-envelope
-        input(name="email" type="email" placeholder="e-mail" required )
-      .input__row
-        .input__row_icon
-          .icon-container
-            i.fas.fa-link
-        input(name="website" type="url" placeholder="website" required)
-    .communication__form_comment
-      textarea(name="comment" placeholder="Message" rows="3" required).m-b-10
-      input(type="submit" value="SEND NOW!")
+  +communication-form("Send us a message")

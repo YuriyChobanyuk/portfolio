@@ -1,0 +1,24 @@
+.comments
+  .comments__title 5 Comments
+  -
+    var defaultImg = 'person-1';
+    var defaultLogin = "personLogin";
+    var defaultTime = "23 minutes ";
+    var defaultText = `i found this post very useful too, the comment form
+                      works just perfect, keep it up guys :)`
+  .comments__container
+    ul.comment-list
+      li
+        +comment(defaultImg, defaultLogin, defaultTime, defaultText)
+        ul 
+          li
+            +comment(defaultImg, defaultLogin, defaultTime, defaultText)
+            ul 
+              li
+                +comment(defaultImg, defaultLogin, defaultTime, defaultText)
+              li
+                +comment(defaultImg, defaultLogin, defaultTime, defaultText)
+          li
+            +comment(defaultImg, defaultLogin, defaultTime, defaultText)
+      li
+        +comment(defaultImg, defaultLogin, defaultTime, defaultText)

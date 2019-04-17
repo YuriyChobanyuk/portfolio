@@ -1,0 +1,33 @@
+html(lang="en")
+  include partials/head
+  include partials/mixins
+  body
+    include partials/sidebar
+    include partials/menu-button
+    .container
+      .simple-row.m-20
+        .col.laptop-b-r-1
+          include partials/slider
+          
+          include partials/comments
+          .communication-block.laptop-p-b-25
+            +communication-form("Leave a Comment")
+          
+        .col
+          include partials/project-info
+          include partials/tags
+          
+          .archives.p-b-25
+            .archives__title
+              |Archives
+            .archives__list
+              -
+                var archList = ["December 2013 (24)", "November 2013 (7)", "September 2013 (2)", "March 2013 (22)" ,"January 2013 (11)"];
+              ul
+                each item in archList
+                  li
+                    a(href="#") #{item}
+    .to-top-button
+      i.fas.fa-arrow-circle-up
+    include partials/contacts
+    include partials/footer

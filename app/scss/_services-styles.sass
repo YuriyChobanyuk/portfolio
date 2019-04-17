@@ -1,0 +1,113 @@
+.communication-block
+  @extend %white-block
+
+  .communication__form_title
+    @extend %title
+
+
+.comments
+  @extend %white-block
+
+  &__container
+    overflow: hidden
+
+  .comments__title
+    @extend %title
+    margin-bottom: 15px
+  ul *
+    list-style-type: none
+
+  ul.comment-list
+    list-style-type: none
+    margin-left: -160px
+    +breakpoint('desktop')
+      margin-left: -160px
+    +breakpoint('mobile')
+      margin-left: -100px
+    +breakpoint('laptop')
+      margin-left: -100px
+    +breakpoint('tablet')
+      margin-left: -120px
+    li
+      margin-left: 80px
+      +breakpoint('desktop')
+        margin-left: 80px
+      +breakpoint('mobile')
+        margin-left: 20px
+      +breakpoint('laptop')
+        margin-left: 20px
+      +breakpoint('tablet')
+        margin-left: 40px
+      margin-top: 10px
+
+
+  .comment
+    display: flex
+    &__down
+      margin-left: 30px
+      min-width: 40px
+      height: 40px
+
+      border-left: 1px solid #dddddd
+      border-bottom: 1px solid #dddddd
+
+      +breakpoint('desktop')
+        border-left: 1px solid #dddddd
+        border-bottom: 1px solid #dddddd
+      +breakpoint('laptop')
+        border: none
+      +breakpoint('mobile')
+        border: none
+      +breakpoint('tablet')
+        border: none
+
+    &__content
+      display: flex
+      flex-wrap: wrap
+      flex-direction: column
+
+    &__title
+      display: flex
+      flex-wrap: wrap
+      font-size: 14px
+      padding-bottom: 5px
+      border-bottom: 1px solid #dddddd
+
+    &__login
+      margin-right: 5px
+
+    &__time
+      color: #dddddd
+
+    &__text
+      margin-top: 5px
+      font-size: 15px
+      color: #c2c2c2
+
+    &__avatar
+      margin-right: 10px
+      margin-left: 10px
+
+      img
+        display: block
+        width: 80px
+        height: 80px
+        object-fit: cover
+
+.archives
+  @extend %white-block
+
+  &__title
+    @extend %title
+    margin-bottom: 15px
+
+  &__list
+    ul
+      list-style: none
+
+      li
+        margin-bottom: 10px
+        a
+          text-decoration: none
+          color: #bbbbbb
+          font-size: 14px

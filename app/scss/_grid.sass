@@ -5,14 +5,14 @@
 .row
   display: flex
   flex-wrap: wrap
-  margin: 0 $gutter/2*(-1)
+  margin: 0 $gutter/2 * (-1)
 [class*='column']
   width: 100%
   padding: 0 $gutter/2
 
 =breakpoint($point)
   @if $point == desktop
-    @media (min-width: 1170px)
+    @media (min-width: 1200px)
       @content
   @else if $point == laptop
     @media (min-width: 1024px)
@@ -50,3 +50,18 @@ $points: ["mobile", "phablet", "tablet", "laptop", "desktop"]
 
 .m-t-20
   margin-top: 20px
+
+
+.m-20
+  margin: 20px
+
+.simple-row
+  display: flex
+  flex-wrap: wrap
+  background-color: white
+
+.col
+  width: 100%
+
+  @media(min-width: 1024px)
+    max-width: 50%

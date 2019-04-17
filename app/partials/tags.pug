@@ -1,0 +1,8 @@
+.tags
+  .tags__title 
+    |Tags
+  .tags__container
+    -
+      var tagslist = ['web design', 'photography', 'development', 'php', 'ecommerce', 'graphic'];
+    each item in tagslist
+      a(href="#").tags__container_element #{item}

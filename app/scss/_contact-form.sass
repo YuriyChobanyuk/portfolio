@@ -101,6 +101,7 @@
           border: 1px solid #eaeaea
           padding-left: 15px
           font-size: 14px
+          background-color: white
 
 
     &_comment
@@ -116,6 +117,7 @@
         font-size: 14px
         padding: 15px
         font-family: $roboto-font
+        background-color: white
 
       [type="submit"]
         height: 60px
@@ -154,6 +156,10 @@
 .invisible-span
   transform: rotate(180deg) !important
 
+@media (max-width: 1120px)
+  .communication
+    max-width: calc(100vw - 340px)
+
 @media (max-width: 1100px)
   .communication-is-shown
     height: 500px
@@ -161,6 +167,9 @@
 @media (max-width: 768px)
   .communication-is-shown
     height: 730px
+
+  .communication
+    max-width: calc(100vw - 40px)
 
   .communication__form_comment
     margin-top: 10px

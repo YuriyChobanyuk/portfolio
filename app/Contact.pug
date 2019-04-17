@@ -1,5 +1,6 @@
 html(lang="en")
   include partials/head
+  include partials/mixins
   body
     include partials/sidebar
     include partials/menu-button
@@ -11,3 +12,15 @@ html(lang="en")
                     
     include partials/contacts
     include partials/footer
+    script.
+      function initMap() {
+    
+        var myPoint = {lat: 48.929580, lng: 24.708661};
+    
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 15, center: myPoint});
+    
+        var marker = new google.maps.Marker({position: myPoint, map: map});
+      }
+    
+      initMap();

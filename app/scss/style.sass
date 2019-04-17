@@ -8,6 +8,7 @@ html
   height: 100%
 
 @import 'grid'
+@import 'extends'
 
 body
   min-height: 100%
@@ -21,11 +22,13 @@ body
   z-index: 0
   height: 100vh
   width: calc(100% - 200px)
+  background-color: #b4b7b8 !important
   +breakpoint('tablet')
     margin-left: 300px
     width: calc(100% - 300px)
 
-@import 'about-styles'
+
+
 
 @media (max-width: 768px)
   .menu-button
@@ -38,6 +41,26 @@ body
   width: 100%
   height: 100%
 
+
+
+.laptop-p-b-25
+  +breakpoint('laptop')
+    padding-bottom: 25px
+
+.p-b-25
+  padding-bottom: 25px
+
+.laptop-b-r-1
+  +breakpoint('laptop')
+    border-right: 1px solid #e5e5e5
+
+
+@import 'services-styles'
+
+@import 'work-styles'
+
+@import 'blog-styles'
+
 @import 'buttons'
 
 @import 'sidebar-styles'
@@ -47,3 +70,5 @@ body
 @import 'contacts-style'
 
 @import 'contact-form'
+
+@import 'about-styles'

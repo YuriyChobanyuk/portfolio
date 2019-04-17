@@ -1,0 +1,107 @@
+mixin skill(elem, i)
+  .skils__element
+    .skils__element_name.
+      #{elem}
+    .skils__element_percentage.
+      #{values[i]}%
+    .skils__element_value
+      -var temp = i + 1;
+      div(class="value-pointer-" + temp)
+        
+mixin gallery-post(sources, title, text)
+  .column-desktop-1-4.column-laptop-1-3.column-tablet-1-2.column-phablet-1-2.column-mobile-1-1.m-t-20
+    .blog-post__gallery
+      .blog-post__gallery_slider
+        each item, index in sources
+          if !index
+            img(src="./img/"+ item + ".png" alt="sliderImg" data-index="" + (index + 1)).slider-active
+          else
+            img(src="./img/"+ item + ".png" alt="sliderImg" data-index="" + (index + 1))
+        .slider-button__left
+          .arrow__left
+        .slider-button__right
+          .arrow__right
+      .blog-post__gallery_title
+        |#{title}
+      .blog-post__gallery_text.
+        #{text}
+      .blog-post__gallery_info
+        include blog-info
+
+mixin link-post(text, link)
+  .column-desktop-1-4.column-laptop-1-3.column-tablet-1-2.column-phablet-1-2.column-mobile-1-1.m-t-20
+    .blog-post__site-link
+      .blog-post__site-link_text #{text}
+      .blog-post__site-link_link
+        a(href="#") #{link}
+
+mixin standart-post(image, title, text)
+  .column-desktop-1-4.column-laptop-1-3.column-tablet-1-2.column-phablet-1-2.column-mobile-1-1.m-t-20
+    .blog-post__standart-post
+      .blog-post__standart-post_img
+        img(src="./img/" + image + ".png" alt="post image")
+      .blog-post__standart-post_title #{title}
+      .blog-post__standart-post_text #{text}
+      .blog-post__standart-post_info
+        include blog-info
+
+mixin video-post(video, title, text)
+  .column-desktop-1-4.column-laptop-1-3.column-tablet-1-2.column-phablet-1-2.column-mobile-1-1.m-t-20
+    .blog-post__video-post
+      .blog-post__video-post_video
+        video(id="player" playsinline controls)
+          //- source(src="./img/sample-video.mkv" type="video/mkv")
+          source(src="./img/sample-video.mp4" type="video/mp4")
+      .blog-post__video-post_title #{title}
+      .blog-post__video-post_text #{text}
+      .blog-post__video-post_info
+        include blog-info
+        
+mixin aside-post(title, text)
+  .column-desktop-1-4.column-laptop-1-3.column-tablet-1-2.column-phablet-1-2.column-mobile-1-1.m-t-20
+    .blog-post__aside-post
+      .blog-post__aside-post_title #{title}
+      .blog-post__aside-post_text #{text}
+
+mixin single-img-post(img)
+  .column-desktop-1-4.column-laptop-1-3.column-tablet-1-2.column-phablet-1-2.column-mobile-1-1.m-t-20
+    .blog-post__single-img-post
+      img(src="./img/" + img + ".png")
+
+mixin communication-form(title)  
+  form(action="#").communication__form
+    .communication__form_title
+      |#{title}
+    .communication__form_autorisation.p-r-10
+      .input__row.m-b-10
+        .input__row_icon
+          .icon-container
+            i.fas.fa-user
+        input(name="name" type="text" placeholder="Name" required minlength="6")
+      .input__row.m-b-10
+        .input__row_icon
+          .icon-container
+            i.far.fa-envelope
+        input(name="email" type="email" placeholder="e-mail" required )
+      .input__row
+        .input__row_icon
+          .icon-container
+            i.fas.fa-link
+        input(name="website" type="url" placeholder="website" required)
+    .communication__form_comment
+      textarea(name="comment" placeholder="Message" rows="3" required).m-b-10
+      input(type="submit" value="SEND NOW!")
+
+mixin comment(avatar, login, time, text)
+  .comment
+    .comment__down
+    .comment__avatar
+      img(src="./img/" + avatar + ".png")
+    .comment__content
+      .comment__title
+        .comment__login
+          |#{login}
+        .comment__time
+          | / #{time} ago
+      .comment__text
+        |#{text}

@@ -33,11 +33,11 @@ gulp.task('imgCopy', async function(){
 
 gulp.task('jsBuild', async function(){
 	gulp.src('./app/src/*.js')
+	.pipe(cache('js'))
+	.pipe(debug())
   .pipe(babel({
             "presets": ["env"]
         }))
-	.pipe(cache('js'))
-	.pipe(debug())
 	.pipe(gulp.dest('./dist/src/'));
 });
 
@@ -65,10 +65,6 @@ gulp.task('cssBuild', async function(){
 	}))
 	.pipe(gulp.dest('./dist/css/'))
 });
-
-gulp.task('gridBuild', async function(){
-  smartgrid('./app/scss/', settings);
-})
 
 gulp.task('watcher', async function(){
 	gulp.watch('./app/img/*', gulp.series('imgCopy'));

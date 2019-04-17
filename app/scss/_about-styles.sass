@@ -1,16 +1,6 @@
-%title
-  font-size: 24px
-  font-weight: 600
-
-%about-block
-  width: 100%
-  background-color: white
-  font-family: $roboto-font
-  padding: 25px
-  border-bottom: 1px solid #e5e5e5
-
 .introdution
-  @extend %about-block
+  @extend %white-block
+  border-bottom: 1px solid #e5e5e5
 
   &__img
     max-height: 300px
@@ -35,7 +25,7 @@
         margin: 10px 0
 
 .staff
-  @extend %about-block
+  @extend %white-block
 
   &__title
     @extend %title
@@ -78,3 +68,93 @@
 
         &_position
           font-size: 13px
+
+.skils
+  @extend %white-block
+  border-bottom: none
+
+  &__title
+    @extend %title
+
+  &__table
+    display: flex
+    flex-direction: column
+    margin-top: 15px
+
+  &__element
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+    &_name
+      width: 50%
+      font-size: 15px
+
+    &_percentage
+      width: 50%
+      display: flex
+      justify-content: flex-end
+
+    &_value
+      height: 30px
+      border: 1px solid #e2e2e2
+      margin: 5px 0 10px 0
+      width: 100%
+      display: flex
+
+$percentage-list: (1: 89%,2: 97%,3: 85%,4: 75%)
+@each $index, $item in $percentage-list
+  .value-pointer-#{$index}
+    width: $item
+    height: 100%
+    background-color: #e2e2e2
+
+.testimonials
+  @extend %white-block
+  border-bottom: none
+
+  &__title
+    @extend %title
+
+  &__item
+    display: flex
+    flex-wrap: wrap
+    margin-top: 15px
+
+    &_avatar
+      width: 80px
+      height: 80px
+
+      img
+        width: 100%
+        object-fit: cover
+
+    &_info
+      color: white
+      background-color: $main-color
+      width: calc(100% - 80px)
+      padding: 20px
+      display: flex
+      align-items: center
+
+    &_text
+      padding: 20px
+      font-size: 18px
+      color: #bebebe
+      word-spacing: .4em
+      border: 1px solid #ececec inset
+      border-top: none
+
+.services
+  @extend %white-block
+  border-bottom: none
+
+  &__title
+    @extend %title
+
+  ul
+    line-height: 2em
+    margin-left: 20px
+    margin-top: 15px
+    font-size: 14px
+    color: #bebebe

@@ -1,10 +1,45 @@
 html(lang="en")
   include partials/head
+  include partials/mixins
   body
     include partials/sidebar
     include partials/menu-button
     .container
+      .blog-list
+        -
+          var sliderImages = ['blog-img-1', 'blog-img-2', 'blog-img-3'];
+          var sliderTitle = 'Gallery Post Example';
+          var sliderText = `A man who works with his hands is a laborer; 
+                      a man who works with his hand s and his brain is a craftsman; 
+                      but a man who works with his hands and his brain and his 
+                      heart is an artist`;
+          var linkText = `Another Post where you can 
+                          put a link to a specific website`;
+          var linkLink = 'http://www.themeforest.net'
+          var standartImage = 'blog-img-4';
+          var standartTitle = "Standard post format";
+          var standartText = `A man who works with his hands is a laborer; a man who works with his 
+                      hand s and his brain is a craftsman; but a man who works with his 
+                      hands and his brain and his heart is an artist`;
+          var video = 'sample-video';
+          var videoTitle = "Self-hosted video post";
+          var asideTitle = "Aside Post Format"
+          var asideText = `This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit 
+                      auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit 
+                      consequat ipsum, nec sagittis sem nibh id elit. `
+        +gallery-post(sliderImages, sliderTitle, sliderText)
+        +link-post(linkText, linkLink)
+        +standart-post(standartImage, standartTitle, standartText)
+        +video-post(video, videoTitle, standartText)
+        +aside-post(asideTitle, asideText)
+        +single-img-post("blog-img-5")
+      
+    .next-post-button Older Posts
+          
+        
     .to-top-button
       i.fas.fa-arrow-circle-up
     include partials/contacts
     include partials/footer
+    script.
+      var masonry = new Masonry('.blog-list');

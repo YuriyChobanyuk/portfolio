@@ -1,0 +1,166 @@
+.blog-list
+  margin: 0 10px
+
+.blog-post__gallery
+  background-color: white
+  font-family: $roboto-font
+
+  &_slider
+    position: relative
+    overflow: hidden
+    width: 100%
+    padding-bottom: 75%
+
+    img
+      height: 100%
+      position: absolute
+      top: 0
+      left: -200%
+      object-fit: cover
+
+    .slider-button__left
+      position: absolute
+      top: calc(50% - 20px)
+      width: 35px
+      height: 40px
+      background-color: $main-color
+      cursor: pointer
+
+      .arrow__left
+        position: absolute
+        border-top: 2px solid white
+        border-left: 2px solid white
+        top: 35%
+        left: 35%
+        width: 15px
+        height: 15px
+        transform: rotate(-45deg)
+        z-index: 6
+
+    .slider-button__right
+      cursor: pointer
+      position: absolute
+      top: calc(50% - 20px)
+      right: 0
+      width: 35px
+      height: 40px
+      background-color: $main-color
+
+      .arrow__right
+        position: absolute
+        border-top: 2px solid white
+        border-left: 2px solid white
+        top: 35%
+        left: 20%
+        width: 15px
+        height: 15px
+        transform: rotate(135deg)
+        z-index: 6
+
+  &_title
+    @extend %blog-title
+
+  &_text
+    @extend %blog-text
+
+.blog-info
+  padding: 15px
+  display: flex
+  flex-wrap: wrap
+  border-top: 1px solid #e3e3e3
+
+  a
+    text-decoration: none
+    color: #818181
+    display: flex
+    font-size: 13px
+    min-width: 50%
+
+    i
+      margin-right: 5px
+
+.slider-active
+  left: 0 !important
+
+.blog-post__site-link
+  padding: 30px 20px
+  background-color: $main-color
+  font-family: $roboto-font
+
+  &_text
+    color: white
+    font-size: 18px
+    text-align: center
+
+  &_link
+    font-size: 14px
+
+    a
+      display: block
+      text-align: center
+      margin-top: 5px
+      color: white
+
+.blog-post__standart-post
+  background-color: white
+  font-family: $roboto-font
+
+
+  &_img
+    img
+      width: 100%
+
+  &_title
+    @extend %blog-title
+
+  &_text
+    @extend %blog-text
+
+.blog-post__video-post
+  background-color: white
+  font-family: $roboto-font
+
+  &_title
+    @extend %blog-title
+
+  &_text
+    @extend %blog-text
+
+  &_video
+
+    video
+      width: 100%
+
+.blog-post__aside-post
+  border-left: 10px solid $main-color
+  background-color: #242b2e
+  padding: 5px 5px 0px 5px
+  font-family: $roboto-font
+
+  &_title
+    @extend %blog-title
+    color: white
+
+  &_text
+    @extend %blog-text
+
+.blog-post__single-img-post
+  img
+    display: block
+    width: 100%
+
+.next-post-button
+  position: fixed
+  bottom: -200%
+  left: calc(50% - 87px)
+  background-color: $main-color
+  cursor: pointer
+  text-transform: uppercase
+  font-family: $roboto-font
+  color: white
+  padding: 25px
+  z-index: 12
+  transition: .3s ease all
+
+.next-post-button-visible
+  bottom: 0%

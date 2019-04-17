@@ -1,0 +1,60 @@
+doctype html
+html(lang="en")
+  include partials/head
+  include partials/mixins
+  body
+    include partials/sidebar
+    include partials/menu-button
+    .container
+      .clearfix
+      .simple-row.m-20
+        .col.laptop-b-r-1
+          include partials/slider
+                
+          .related-projects.laptop-p-b-25
+            .related-projects__title Related Projects
+            .related-projects__previews
+              each item in '123'
+                .preview__wrapper(data-anchor=filterlist[randIndex])
+                  .preview__container
+                    .preview__item
+                      .preview__info
+                        .preview__info_title
+                          |Cool App Design
+                        .preview__info_tags
+                          |Development,
+                          | mobile
+                        .preview__info_link
+                          a(href="#")
+                            i.fas.fa-arrow-right
+                      img(src="img/preview-1.png" alt="preview img")
+        .col
+          include partials/project-info
+              
+          include partials/tags
+          
+          .gallery
+            .gallery__title
+              |Project Gallery
+            .gallery__container
+              each item in '1234567'
+                a(href="#").gallery__container_item
+                  img(src="./img/blog-img-" + item + ".png" alt="gallery image")
+                    
+          .project-features.p-b-25
+            .project-features__title
+              |Project Features
+            .project-features__list
+              -
+                var featuresList = ["Responsive Layout", "Font Awesome Icons", "Clean & Commented Code", "Pixel perfect Design", "Highly Customizable"];
+              ul
+                each item in featuresList
+                  li
+                    i.fas.fa-check
+                    |#{item}
+    .to-top-button
+      i.fas.fa-arrow-circle-up
+    
+    
+    include partials/contacts
+    include partials/footer
