@@ -46,10 +46,8 @@ var containerScroll = Scrollbar.init(document.querySelector('.container'));
 containerScroll.addListener(function(){
     if(500 < containerScroll.scrollTop + 200){
       document.querySelector('.to-top-button').classList.add('to-top-visible');
-      document.querySelector('.next-post-button').classList.add('.next-post-button-visible');
     } else {
       document.querySelector('.to-top-button').classList.remove('to-top-visible');
-      document.querySelector('.next-post-button').classList.remove('.next-post-button-visible');
     };
 });
 
