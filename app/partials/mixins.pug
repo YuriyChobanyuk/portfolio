@@ -49,9 +49,7 @@ mixin video-post(video, title, text)
   .column-desktop-1-4.column-laptop-1-3.column-tablet-1-2.column-phablet-1-2.column-mobile-1-1.m-t-20
     .blog-post__video-post
       .blog-post__video-post_video
-        video(id="player" playsinline controls)
-          //- source(src="./img/sample-video.mkv" type="video/mkv")
-          source(src="./img/sample-video.mp4" type="video/mp4")
+        iframe(src="https://www.youtube.com/embed/-5mJVLNL5fs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
       .blog-post__video-post_title #{title}
       .blog-post__video-post_text #{text}
       .blog-post__video-post_info
